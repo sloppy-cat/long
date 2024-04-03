@@ -1,0 +1,84 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: 화물
+          uri: http://localhost:8082
+          predicates:
+            - Path=/freights/**, 
+        - id: 배송
+          uri: http://localhost:8083
+          predicates:
+            - Path=/freightDeliveries/**, 
+        - id: 정산
+          uri: http://localhost:8084
+          predicates:
+            - Path=/settlements/**, 
+        - id: 알림
+          uri: http://localhost:8085
+          predicates:
+            - Path=/notifications/**, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: 화물
+          uri: http://화물:8080
+          predicates:
+            - Path=/freights/**, 
+        - id: 배송
+          uri: http://배송:8080
+          predicates:
+            - Path=/freightDeliveries/**, 
+        - id: 정산
+          uri: http://정산:8080
+          predicates:
+            - Path=/settlements/**, 
+        - id: 알림
+          uri: http://알림:8080
+          predicates:
+            - Path=/notifications/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
