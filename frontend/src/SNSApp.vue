@@ -37,31 +37,31 @@
                     <v-list-item
                         class="px-2"
                         key="freights"
-                        to="/화물/freights"
+                        to="/freights/freights"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        화물
+                        Freight
                     </v-list-item>
 
 
                     <v-list-item
                         class="px-2"
                         key="freightDeliveries"
-                        to="/배송/freightDeliveries"
+                        to="/deliveries/freightDeliveries"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        화물배송
+                        FreightDelivery
                     </v-list-item>
 
 
                     <v-list-item
                         class="px-2"
                         key="settlements"
-                        to="/정산/settlements"
+                        to="/settlements/settlements"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -73,7 +73,7 @@
                     <v-list-item
                         class="px-2"
                         key="notifications"
-                        to="/알림/notifications"
+                        to="/arlims/notifications"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -161,31 +161,31 @@ export default {
         ImageUrl: '',
         aggregate: [
             { 
-                title: '화물', 
+                title: 'Freight', 
                 description: '화물', 
                 key: 'freights', 
-                route: '/화물/freights',
+                route: '/freights/freights',
                 ImageUrl: '',
             },
             { 
-                title: '화물배송', 
+                title: 'FreightDelivery', 
                 description: '', 
                 key: 'freightDeliveries', 
-                route: '/배송/freightDeliveries',
+                route: '/deliveries/freightDeliveries',
                 ImageUrl: '',
             },
             { 
                 title: 'Settlement', 
                 description: '', 
                 key: 'settlements', 
-                route: '/정산/settlements',
+                route: '/settlements/settlements',
                 ImageUrl: '',
             },
             { 
                 title: 'Notification', 
                 description: '', 
                 key: 'notifications', 
-                route: '/알림/notifications',
+                route: '/arlims/notifications',
                 ImageUrl: '',
             },
             

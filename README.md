@@ -20,10 +20,10 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- 화물
-- 배송
-- 정산
-- 알림
+- Freight
+- Delivery
+- Settlement
+- Arlim
 
 
 ## Run API Gateway (Spring Gateway)
@@ -33,19 +33,19 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- 화물
+- Freight
 ```
  http :8088/freights id="id" origin="origin" destination="destination" fee="fee" status="status" freightOwnerId="freightOwnerId" 
 ```
-- 배송
+- Delivery
 ```
  http :8088/freightDeliveries id="id" freightId="freightId" carOwnerId="carOwnerId" createdAt="createdAt" state="state" isRecieved="isRecieved" freightOwnerId="freightOwnerId" 
 ```
-- 정산
+- Settlement
 ```
  http :8088/settlements id="id" carOwnerId="carOwnerId" freightOwnerId="freightOwnerId" fee="fee" state="state" 
 ```
-- 알림
+- Arlim
 ```
  http :8088/notifications id="id" title="title" content="content" target="target" 
 ```

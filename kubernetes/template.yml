@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 화물
+  name: Freight
   labels:
-    app: 화물
+    app: Freight
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 화물
+      app: Freight
   template:
     metadata:
       labels:
-        app: 화물
+        app: Freight
     spec:
       containers:
-        - name: 화물
-          image: username/화물:latest
+        - name: Freight
+          image: username/Freight:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 배송
+  name: Delivery
   labels:
-    app: 배송
+    app: Delivery
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 배송
+      app: Delivery
   template:
     metadata:
       labels:
-        app: 배송
+        app: Delivery
     spec:
       containers:
-        - name: 배송
-          image: username/배송:latest
+        - name: Delivery
+          image: username/Delivery:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 정산
+  name: Settlement
   labels:
-    app: 정산
+    app: Settlement
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 정산
+      app: Settlement
   template:
     metadata:
       labels:
-        app: 정산
+        app: Settlement
     spec:
       containers:
-        - name: 정산
-          image: username/정산:latest
+        - name: Settlement
+          image: username/Settlement:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -123,22 +123,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 알림
+  name: Arlim
   labels:
-    app: 알림
+    app: Arlim
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 알림
+      app: Arlim
   template:
     metadata:
       labels:
-        app: 알림
+        app: Arlim
     spec:
       containers:
-        - name: 알림
-          image: username/알림:latest
+        - name: Arlim
+          image: username/Arlim:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -165,15 +165,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 화물
+  name: Freight
   labels:
-    app: 화물
+    app: Freight
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 화물
+    app: Freight
 
 
 ---
@@ -182,15 +182,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 배송
+  name: Delivery
   labels:
-    app: 배송
+    app: Delivery
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 배송
+    app: Delivery
 
 
 ---
@@ -199,15 +199,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 정산
+  name: Settlement
   labels:
-    app: 정산
+    app: Settlement
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 정산
+    app: Settlement
 
 
 ---
@@ -216,13 +216,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 알림
+  name: Arlim
   labels:
-    app: 알림
+    app: Arlim
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 알림
+    app: Arlim
 

@@ -29,48 +29,48 @@ jobs:
       
       - name: Build Maven Projects
         run: |
-          mvn clean package -f ./화물/pom.xml
-          mvn clean package -f ./배송/pom.xml
-          mvn clean package -f ./정산/pom.xml
-          mvn clean package -f ./알림/pom.xml
+          mvn clean package -f ./Freight/pom.xml
+          mvn clean package -f ./Delivery/pom.xml
+          mvn clean package -f ./Settlement/pom.xml
+          mvn clean package -f ./Arlim/pom.xml
 
-      - name: Docker Build and push for 화물
+      - name: Docker Build and push for Freight
         uses: docker/build-push-action@v4
         with:
-          context: ./화물
+          context: ./Freight
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/화물:latest
-            ghcr.io/${{ github.repository }}/화물:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/freight:latest
+            ghcr.io/${{ github.repository }}/freight:${{ github.ref_name }}
             
-      - name: Docker Build and push for 배송
+      - name: Docker Build and push for Delivery
         uses: docker/build-push-action@v4
         with:
-          context: ./배송
+          context: ./Delivery
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/배송:latest
-            ghcr.io/${{ github.repository }}/배송:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/delivery:latest
+            ghcr.io/${{ github.repository }}/delivery:${{ github.ref_name }}
             
-      - name: Docker Build and push for 정산
+      - name: Docker Build and push for Settlement
         uses: docker/build-push-action@v4
         with:
-          context: ./정산
+          context: ./Settlement
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/정산:latest
-            ghcr.io/${{ github.repository }}/정산:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/settlement:latest
+            ghcr.io/${{ github.repository }}/settlement:${{ github.ref_name }}
             
-      - name: Docker Build and push for 알림
+      - name: Docker Build and push for Arlim
         uses: docker/build-push-action@v4
         with:
-          context: ./알림
+          context: ./Arlim
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/알림:latest
-            ghcr.io/${{ github.repository }}/알림:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/arlim:latest
+            ghcr.io/${{ github.repository }}/arlim:${{ github.ref_name }}
             

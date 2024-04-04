@@ -5,17 +5,17 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import 화물FreightManager from "./components/listers/화물FreightCards"
-import 화물FreightDetail from "./components/listers/화물FreightDetail"
+import FreightFreightManager from "./components/listers/FreightFreightCards"
+import FreightFreightDetail from "./components/listers/FreightFreightDetail"
 
-import 배송FreightDeliveryManager from "./components/listers/배송FreightDeliveryCards"
-import 배송FreightDeliveryDetail from "./components/listers/배송FreightDeliveryDetail"
+import DeliveryFreightDeliveryManager from "./components/listers/DeliveryFreightDeliveryCards"
+import DeliveryFreightDeliveryDetail from "./components/listers/DeliveryFreightDeliveryDetail"
 
-import 정산SettlementManager from "./components/listers/정산SettlementCards"
-import 정산SettlementDetail from "./components/listers/정산SettlementDetail"
+import SettlementSettlementManager from "./components/listers/SettlementSettlementCards"
+import SettlementSettlementDetail from "./components/listers/SettlementSettlementDetail"
 
-import 알림NotificationManager from "./components/listers/알림NotificationCards"
-import 알림NotificationDetail from "./components/listers/알림NotificationDetail"
+import ArlimNotificationManager from "./components/listers/ArlimNotificationCards"
+import ArlimNotificationDetail from "./components/listers/ArlimNotificationDetail"
 
 
 export default new Router({
@@ -23,47 +23,47 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/화물/freights',
-                name: '화물FreightManager',
-                component: 화물FreightManager
+                path: '/freights/freights',
+                name: 'FreightFreightManager',
+                component: FreightFreightManager
             },
             {
-                path: '/화물/freights/:id',
-                name: '화물FreightDetail',
-                component: 화물FreightDetail
-            },
-
-            {
-                path: '/배송/freightDeliveries',
-                name: '배송FreightDeliveryManager',
-                component: 배송FreightDeliveryManager
-            },
-            {
-                path: '/배송/freightDeliveries/:id',
-                name: '배송FreightDeliveryDetail',
-                component: 배송FreightDeliveryDetail
+                path: '/freights/freights/:id',
+                name: 'FreightFreightDetail',
+                component: FreightFreightDetail
             },
 
             {
-                path: '/정산/settlements',
-                name: '정산SettlementManager',
-                component: 정산SettlementManager
+                path: '/deliveries/freightDeliveries',
+                name: 'DeliveryFreightDeliveryManager',
+                component: DeliveryFreightDeliveryManager
             },
             {
-                path: '/정산/settlements/:id',
-                name: '정산SettlementDetail',
-                component: 정산SettlementDetail
+                path: '/deliveries/freightDeliveries/:id',
+                name: 'DeliveryFreightDeliveryDetail',
+                component: DeliveryFreightDeliveryDetail
             },
 
             {
-                path: '/알림/notifications',
-                name: '알림NotificationManager',
-                component: 알림NotificationManager
+                path: '/settlements/settlements',
+                name: 'SettlementSettlementManager',
+                component: SettlementSettlementManager
             },
             {
-                path: '/알림/notifications/:id',
-                name: '알림NotificationDetail',
-                component: 알림NotificationDetail
+                path: '/settlements/settlements/:id',
+                name: 'SettlementSettlementDetail',
+                component: SettlementSettlementDetail
+            },
+
+            {
+                path: '/arlims/notifications',
+                name: 'ArlimNotificationManager',
+                component: ArlimNotificationManager
+            },
+            {
+                path: '/arlims/notifications/:id',
+                name: 'ArlimNotificationDetail',
+                component: ArlimNotificationDetail
             },
 
 
